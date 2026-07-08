@@ -64,4 +64,14 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { register, login };
+// GET /api/auth/team-members  (manager only — used to populate filter dropdowns)
+const getTeamMembers = async (req, res) => {
+  try {
+    const members = await User.find({ role: "team_member" }).select("name email");
+    res.json(members);
+  } catch (err) {
+    res.status(500).json({ message: "Server error", error: err.message });
+  }
+};
+
+module.exports = { register, login, getTeamMembers };
