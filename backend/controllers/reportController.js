@@ -1,5 +1,16 @@
 const Report = require("../models/Report");
 
+// Helper: if a report is still in "draft" status after its week has ended,
+// treat it as "late" for display purposes (without permanently changing
+// the stored status, so the user can still submit it normally).
+const withComputedStatus = (report) => {
+  const obj = report.toObject ? report.toObject() : report;
+  if (obj.status === "draft" && new Date(obj.weekEndDate) < new Date()) {
+    obj.status = "late";
+  }
+  return obj;
+};
+
 // POST /api/reports  (team member creates their own report)
 const createReport = async (req, res) => {
   try {
@@ -86,7 +97,7 @@ const getMyReports = async (req, res) => {
       .populate("project", "name")
       .sort({ weekStartDate: -1 });
 
-    res.json(reports);
+    res.json(reports.map(withComputedStatus));
   } catch (err) {
     res.status(500).json({ message: "Server error", error: err.message });
   }
@@ -112,7 +123,7 @@ const getAllReports = async (req, res) => {
       .populate("project", "name")
       .sort({ weekStartDate: -1 });
 
-    res.json(reports);
+    res.json(reports.map(withComputedStatus));
   } catch (err) {
     res.status(500).json({ message: "Server error", error: err.message });
   }
