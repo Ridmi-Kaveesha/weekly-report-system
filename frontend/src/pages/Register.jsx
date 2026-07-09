@@ -31,7 +31,8 @@ export default function Register() {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page register-page">
+      <div className="auth-bg-layer"></div>
       <div className="auth-card">
         <h2>Create Account</h2>
         {error && <p className="error-text">{error}</p>}

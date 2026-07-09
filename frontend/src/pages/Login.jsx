@@ -29,7 +29,8 @@ export default function Login() {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page login-page">
+      <div className="auth-bg-layer"></div>
       <div className="auth-card">
         <h2>Login</h2>
         {error && <p className="error-text">{error}</p>}
