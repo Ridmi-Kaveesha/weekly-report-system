@@ -10,6 +10,7 @@ import ReportFilters from "../components/ReportFilters";
 import ReportsTable from "../components/ReportsTable";
 import RecentActivity from "../components/RecentActivity";
 import ProjectsPage from "./ProjectsPage";
+import AIChatWidget from "../components/AIChatWidget";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
@@ -113,6 +114,7 @@ export default function Dashboard() {
           </>
         )}
       </div>
+      <AIChatWidget />
     </div>
   );
 }
