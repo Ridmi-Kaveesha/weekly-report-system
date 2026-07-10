@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -93,7 +95,7 @@ body {
 .btn {
   width: 100%;
   padding: 12px;
-  background: #1d4ed8;
+  background: linear-gradient(135deg, #266ca9, #0f2573);
   color: white;
   border: none;
   border-radius: 8px;
@@ -103,7 +105,7 @@ body {
 }
 
 .btn:hover {
-  background: #1e40af;
+  background: linear-gradient(135deg, #1f5a8f, #0a1a52);
 }
 
 .btn-secondary {
@@ -124,7 +126,7 @@ body {
 }
 
 .navbar {
-  background: #1e3a8a;
+  background: #0f2573;
   color: white;
   padding: 16px 24px;
   display: flex;
@@ -194,7 +196,7 @@ th, td {
   background-position: center;
   filter: blur(2px);
   transform: scale(1.05);
-  opacity: 0.7;
+  opacity: 0.9;
   z-index: 0;
 }
 
@@ -202,7 +204,7 @@ th, td {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.45));
+  background: linear-gradient(180deg, rgba(15, 37, 115, 0.65), rgba(38, 108, 169, 0.45));
   z-index: 0;
 }
 
@@ -216,9 +218,24 @@ th, td {
 }
 
 .landing-logo {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1e3a8a;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  color: white;
+  text-transform: uppercase;
+}
+
+.landing-logo-line1 {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.landing-logo-line2 {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  opacity: 0.9;
 }
 
 .landing-nav-buttons {
@@ -228,8 +245,8 @@ th, td {
 
 .btn-outline {
   padding: 10px 22px;
-  border: 1.5px solid #1d4ed8;
-  color: #1d4ed8;
+  border: 1.5px solid white;
+  color: white;
   border-radius: 8px;
   font-weight: 600;
   font-size: 14px;
@@ -238,21 +255,22 @@ th, td {
 }
 
 .btn-outline:hover {
-  background: #eff6ff;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .btn-filled {
   padding: 10px 22px;
-  background: #1d4ed8;
+  background: linear-gradient(135deg, #266ca9, #0f2573);
   color: white;
   border-radius: 8px;
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
+  border: none;
 }
 
 .btn-filled:hover {
-  background: #1e40af;
+  background: linear-gradient(135deg, #1f5a8f, #0a1a52);
 }
 
 .landing-hero {
@@ -263,21 +281,24 @@ th, td {
   justify-content: center;
   text-align: center;
   padding: 40px 24px;
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
 .landing-hero h1 {
-  font-size: 46px;
-  color: #1e3a8a;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 54px;
+  font-weight: 800;
+  color: white;
   margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .landing-hero p {
   font-size: 18px;
-  color: #4b5563;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   margin-bottom: 32px;
 }

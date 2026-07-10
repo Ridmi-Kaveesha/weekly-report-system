@@ -5,7 +5,10 @@ export default function Home() {
     <div className="landing-page">
       <div className="landing-bg-layer"></div>
       <div className="landing-nav">
-        <div className="landing-logo">Weekly Report Generator</div>
+        <div className="landing-logo">
+          <span className="landing-logo-line1">Weekly Report</span>
+          <span className="landing-logo-line2">Generator</span>
+        </div>
         <div className="landing-nav-buttons">
           <Link to="/login" className="btn-outline">
             Login
